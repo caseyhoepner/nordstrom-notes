@@ -1,7 +1,7 @@
 const noteReducer = (state=[], action) => {
   switch (action.type) {
     case 'ADD_NOTE':
-      return [...state, {text: action.text, tag: action.tag}]
+      return [...state, {id: action.note.Id, text: action.note.text, tag: action.note.tag}]
 
     default:
       return state;

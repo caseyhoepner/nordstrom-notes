@@ -27,6 +27,7 @@ export class NoteList extends Component {
 
   render() {
     const { notes } = this.props; 
+    console.log(notes)
     const { filter } = this.state; 
     let noteCards;
 
@@ -34,12 +35,12 @@ export class NoteList extends Component {
       let filteredNotes = this.filterNotes(filter);
 
       if (filteredNotes.length !== 0) {
-        console.log(filteredNotes)
         noteCards = filteredNotes.map(filteredNote => {
           return (
             <NoteCard 
               text={filteredNote.text} 
-              date={filteredNote.date} 
+              date={filteredNote.date}  
+              tag={filteredNote.tag}  
               id={filteredNote.id}>
             </NoteCard>
           )
@@ -54,6 +55,7 @@ export class NoteList extends Component {
           <NoteCard 
             text={note.text} 
             date={note.date} 
+            tag={note.tag} 
             id={note.id}>
           </NoteCard>
         )
