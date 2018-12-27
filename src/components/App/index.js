@@ -12,8 +12,8 @@ class App extends Component {
     return (
         <div className="App">
           <Switch>
-            <Route exact path='/' component={NoteForm} />
-            <Route exact path='/notes' component={NoteList} />
+            <Route exact path='/note-form' component={NoteForm} />
+            <Route exact path='/' component={NoteList} />
             <Route component={ PathError } />
           </Switch>
         </div>

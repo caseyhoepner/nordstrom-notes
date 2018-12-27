@@ -6,8 +6,6 @@ export const NoteCard = ({ text, tag, date, id }) => {
   return (
     <div>
       <p>{text}</p>
-      <p>{tag}</p>
-      <p>{id}</p>
     </div>
   ) 
 }

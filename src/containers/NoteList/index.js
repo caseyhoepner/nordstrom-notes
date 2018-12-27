@@ -9,7 +9,7 @@ export class NoteList extends Component {
     super(props)
 
     this.state = {
-      filter: ''
+      filter: '',
     }
   }
 
@@ -20,13 +20,13 @@ export class NoteList extends Component {
   handleChange = async (event) => {
     const { name, value } = event.target;
 
-    this.setState({ [name]: value }) 
+    this.setState({ [name]: value });
   }
 
   filterNotes = (filter) => {
     const { notes } = this.props;
 
-    return notes.filter(note => note.tag === filter)
+    return notes.filter(note => note.tag === filter);
   } 
 
   render() {
@@ -34,7 +34,6 @@ export class NoteList extends Component {
     const { filter } = this.state; 
     let filteredNotes = this.filterNotes(filter)
     let noteCards;
-    console.log(filteredNotes)
 
     if (filteredNotes.length) {
         noteCards = filteredNotes.map(filteredNote => {
@@ -43,7 +42,8 @@ export class NoteList extends Component {
               text={filteredNote.text} 
               date={filteredNote.date}  
               tag={filteredNote.tag}  
-              id={filteredNote.id}>
+              id={filteredNote.id}
+              key={filteredNote.id}>
             </NoteCard>
           )
         })
@@ -55,7 +55,8 @@ export class NoteList extends Component {
             text={note.text} 
             date={note.date} 
             tag={note.tag} 
-            id={note.id}>
+            id={note.id}
+            key={note.id}>
           </NoteCard>
         )
       })
@@ -67,6 +68,7 @@ export class NoteList extends Component {
     return (
       <div>
         <h1>Notes</h1>
+          <button onClick={() => this.props.history.push('/note-form')}>Add a Note</button>
           <select
               name='filter' 
               value={filter} 
@@ -82,14 +84,14 @@ export class NoteList extends Component {
       </div>
     ) 
   }
-}
+};
 
 export const mapStateToProps = (state) => ({
   notes: state.notes,
-})
+});
 
 export const mapDispatchToProps = (dispatch) => ({
-  retrieveNotes: () => dispatch(retrieveNotes())
-})
+  retrieveNotes: () => dispatch(retrieveNotes()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(NoteList);
