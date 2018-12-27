@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { changeFilter } from '../../actions/filter-actions';
 import './NoteList.css';
 
 export class NoteList extends Component {
@@ -15,16 +14,14 @@ export class NoteList extends Component {
 
   handleChange = async (event) => {
     const { name, value } = event.target;
-    const { filter } = this.state;
-    const { changeFilter } = this.props; 
 
     await this.setState({ [name]: value }) 
   }
 
   filterNotes = (filter) => {
-    const filteredNotes = this.props.notes.filter(note => {
-      return note.filter === filter
-    })
+    const { notes } = this.props;
+
+    return notes.filter(note => note.filter === filter)
   } 
 
   render() {
@@ -35,7 +32,7 @@ export class NoteList extends Component {
     if (filter && notes) {
       let filteredNotes = this.filterNotes(filter);
 
-      if (filteredNotes) {
+      if (filteredNotes.length !== 0) {
         noteCards = filteredNotes.map(filteredNote => <p>{filteredNote.text}</p>)
       } else {
         noteCards = <p>There are no notes to display</p>
