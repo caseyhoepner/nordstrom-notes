@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import NoteForm from '../../containers/NoteForm';
 import NoteList from '../../containers/NoteList';
-import { BrowserRouter, Route, withRouter, Switch } from 'react-router-dom';
+import PathError from '../PathError';
+import { Route, withRouter, Switch } from 'react-router-dom';
 import { retrieveNotes } from '../../thunks/fetchNotes';
 import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount = () => {
     this.props.retrieveNotes();
@@ -18,8 +16,11 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <Route exact path='/' component={NoteForm} />
-          <Route exact path='/notes' component={NoteList} />
+          <Switch>
+            <Route exact path='/' component={NoteForm} />
+            <Route exact path='/notes' component={NoteList} />
+            <Route component={ PathError } />
+          </Switch>
         </div>
     );
   }
