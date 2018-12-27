@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NoteCard } from '../NoteCard';
 
 import './NoteList.css';
 
@@ -33,13 +34,30 @@ export class NoteList extends Component {
       let filteredNotes = this.filterNotes(filter);
 
       if (filteredNotes.length !== 0) {
-        noteCards = filteredNotes.map(filteredNote => <p>{filteredNote.text}</p>)
+        console.log(filteredNotes)
+        noteCards = filteredNotes.map(filteredNote => {
+          return (
+            <NoteCard 
+              text={filteredNote.text} 
+              date={filteredNote.date} 
+              id={filteredNote.id}>
+            </NoteCard>
+          )
+        })
       } else {
         noteCards = <p>There are no notes to display</p>
       }
 
     } else if (!filter && notes) {
-      noteCards = notes.map(note => <p>{note.text}</p>)
+      noteCards = notes.map(note => {
+        return(
+          <NoteCard 
+            text={note.text} 
+            date={note.date} 
+            id={note.id}>
+          </NoteCard>
+        )
+      })
 
     } else {
       noteCards = <p>There are no notes to display</p>
