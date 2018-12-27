@@ -14,15 +14,20 @@ export class NoteList extends Component {
 
   handleChange = async (event) => {
     const { name, value } = event.target;
+    const { filter } = this.state;
+    const { changeFilter } = this.props; 
 
     await this.setState({ [name]: value }) 
-    this.props.changeFilter(this.state.filter);
+    changeFilter(filter);
   }
 
   render() {
+    const { notes } = this.props; 
+    const { tag } = this.state; 
     let noteCards;
-    if (this.props.notes) {
-      noteCards = this.props.notes.map(note => <p>{note.text}</p>)
+
+    if (notes) {
+      noteCards = notes.map(note => <p>{note.text}</p>)
     } else {
       noteCards = <p>'There are no notes to display'</p>
     }
@@ -32,7 +37,7 @@ export class NoteList extends Component {
         <h1>Notes</h1>
           <select
               name='filter' 
-              value={this.state.tag} 
+              value={tag} 
               onChange={this.handleChange}>
             <option value=''>Choose a Filter</option>
             <option value='personal'>Personal</option>
