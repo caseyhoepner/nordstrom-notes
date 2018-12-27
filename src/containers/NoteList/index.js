@@ -20,24 +20,23 @@ export class NoteList extends Component {
   handleChange = async (event) => {
     const { name, value } = event.target;
 
-    await this.setState({ [name]: value }) 
+    this.setState({ [name]: value }) 
   }
 
   filterNotes = (filter) => {
     const { notes } = this.props;
 
-    return notes.filter(note => note.filter === filter)
+    return notes.filter(note => note.tag === filter)
   } 
 
   render() {
     const { notes } = this.props; 
     const { filter } = this.state; 
+    let filteredNotes = this.filterNotes(filter)
     let noteCards;
+    console.log(filteredNotes)
 
-    if (filter && notes) {
-      let filteredNotes = this.filterNotes(filter);
-
-      if (filteredNotes.length !== 0) {
+    if (filteredNotes.length) {
         noteCards = filteredNotes.map(filteredNote => {
           return (
             <NoteCard 
@@ -48,11 +47,8 @@ export class NoteList extends Component {
             </NoteCard>
           )
         })
-      } else {
-        noteCards = <p>There are no notes to display</p>
-      }
-
-    } else if (!filter && notes) {
+        
+    } else if (!filteredNotes.length && notes) {
       noteCards = notes.map(note => {
         return(
           <NoteCard 
