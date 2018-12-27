@@ -12,12 +12,43 @@ export class NoteForm extends Component {
     }
   }
 
+  handleChange = (event) => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+    }) 
+  }
+
+  handleClick = (event) => {
+    event.preventDefault();
+
+  }
+
   render() {
     return (
       <div>
-        <p>NoteForm</p>
+        <h1>Notes</h1>
+        <form>
+          <textarea 
+            name='text' 
+            type='text' 
+            value={this.state.text} 
+            onChange={this.handleChange} 
+            maxlength='250' />
+          <select
+              name='tag' 
+              value={this.state.tag} 
+              onChange={this.handleChange}>
+            <option value=''>Choose a Tag</option>
+            <option value='personal'>Personal</option>
+            <option value='work'>Work</option>
+            <option value='hobby'>Hobby</option>
+          </select>
+          <button onClick={this.handleClick}>Save Note</button>
+        </form>
       </div>
-      ) 
+    ) 
   }
 }
 
