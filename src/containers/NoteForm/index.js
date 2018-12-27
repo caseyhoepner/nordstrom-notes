@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './NoteForm.css';
+import { addNote } from '../../actions/note-actions';
 
 export class NoteForm extends Component {
   constructor() {
@@ -20,9 +21,10 @@ export class NoteForm extends Component {
     }) 
   }
 
-  handleClick = (event) => {
+  handleClick = async (event) => {
     event.preventDefault();
-
+    await this.props.addNote(this.state);
+    this.props.history.push('/notes')
   }
 
   render() {
@@ -35,7 +37,7 @@ export class NoteForm extends Component {
             type='text' 
             value={this.state.text} 
             onChange={this.handleChange} 
-            maxlength='250' />
+            maxLength='250' />
           <select
               name='tag' 
               value={this.state.tag} 
@@ -53,7 +55,7 @@ export class NoteForm extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-
+  addNote: newNote => dispatch(addNote(newNote)),
 })
 
 export default connect(null, mapDispatchToProps)(NoteForm);
