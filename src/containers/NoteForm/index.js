@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import './NoteForm.css';
-import { addNote } from '../../actions/note-actions';
 import { postNote } from '../../utils/api';
+import './NoteForm.css';
 
 export class NoteForm extends Component {
   constructor() {
@@ -17,16 +15,13 @@ export class NoteForm extends Component {
   handleChange = (event) => {
     const { name, value } = event.target;
 
-    this.setState({
-      [name]: value,
-    }) 
+    this.setState({ [name]: value }) 
   }
 
   handleClick = async (event) => {
     event.preventDefault();
     await postNote(this.state)
-    // await this.props.addNote(this.state);
-    this.props.history.push('/notes')
+    this.props.history.push('/')
   }
 
   render() {
@@ -56,8 +51,4 @@ export class NoteForm extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  addNote: newNote => dispatch(addNote(newNote)),
-})
-
-export default connect(null, mapDispatchToProps)(NoteForm);
+export default NoteForm;
