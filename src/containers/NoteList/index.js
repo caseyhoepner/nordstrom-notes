@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './NoteList.css';
-// import { addNote } from '../../actions/note-actions';
+import { changeFilter } from '../../actions/filter-actions';
 
 export class NoteList extends Component {
   constructor() {
@@ -24,7 +24,7 @@ export class NoteList extends Component {
       <div>
         <h1>Notes</h1>
           <select
-              name='tag' 
+              name='filter' 
               value={this.state.tag} 
               onChange={this.handleChange}>
             <option value=''>Choose a Filter</option>
@@ -38,7 +38,7 @@ export class NoteList extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  changeFilter: (newFilter) => dispatch(changeFilter(newFilter)),
+  changeFilter: (filter) => dispatch(changeFilter(filter)),
 })
 
 export default connect(null, mapDispatchToProps)(NoteList);
