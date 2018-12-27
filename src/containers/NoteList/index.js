@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NoteCard } from '../NoteCard';
-
+import { retrieveNotes } from '../../thunks/fetchNotes';
 import './NoteList.css';
 
 export class NoteList extends Component {
@@ -11,6 +11,10 @@ export class NoteList extends Component {
     this.state = {
       filter: ''
     }
+  }
+
+  componentDidMount = () => {
+    this.props.retrieveNotes();
   }
 
   handleChange = async (event) => {
@@ -27,7 +31,6 @@ export class NoteList extends Component {
 
   render() {
     const { notes } = this.props; 
-    console.log(notes)
     const { filter } = this.state; 
     let noteCards;
 
@@ -85,8 +88,12 @@ export class NoteList extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   notes: state.notes,
 })
 
-export default connect(mapStateToProps)(NoteList);
+export const mapDispatchToProps = (dispatch) => ({
+  retrieveNotes: () => dispatch(retrieveNotes())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NoteList);

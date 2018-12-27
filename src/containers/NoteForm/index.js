@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './NoteForm.css';
 import { addNote } from '../../actions/note-actions';
+import { postNote } from '../../utils/api';
 
 export class NoteForm extends Component {
   constructor() {
@@ -23,7 +24,8 @@ export class NoteForm extends Component {
 
   handleClick = async (event) => {
     event.preventDefault();
-    await this.props.addNote(this.state);
+    await postNote(this.state)
+    // await this.props.addNote(this.state);
     this.props.history.push('/notes')
   }
 
