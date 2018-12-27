@@ -1,4 +1,4 @@
-const filterReducer = (state='SHOW_ALL', action) => {
+const filterReducer = (state='', action) => {
 
   switch (action.type) {
     

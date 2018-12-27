@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
 import NoteForm from '../../containers/NoteForm';
 import NoteList from '../../containers/NoteList';
+import { BrowserRouter, Route, withRouter, Switch } from 'react-router-dom';
+import { retrieveNotes } from '../../thunks/fetchNotes';
+import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount = () => {
+    this.props.retrieveNotes();
+  }
+
   render() {
     return (
         <div className="App">
@@ -15,4 +25,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = (dispatch) => ({
+  retrieveNotes: () => dispatch(retrieveNotes())
+})
+
+export default withRouter(connect(null, mapDispatchToProps)(App));

@@ -4,8 +4,8 @@ import './NoteList.css';
 import { changeFilter } from '../../actions/filter-actions';
 
 export class NoteList extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       filter: ''
@@ -16,10 +16,17 @@ export class NoteList extends Component {
     const { name, value } = event.target;
 
     await this.setState({ [name]: value }) 
-    this.props.changeFilter(this.state);
+    this.props.changeFilter(this.state.filter);
   }
 
   render() {
+    let noteCards;
+    if (this.props.notes) {
+      noteCards = this.props.notes.map(note => <p>{note.text}</p>)
+    } else {
+      noteCards = <p>'There are no notes to display'</p>
+    }
+
     return (
       <div>
         <h1>Notes</h1>
@@ -32,13 +39,18 @@ export class NoteList extends Component {
             <option value='work'>Work</option>
             <option value='hobby'>Hobby</option>
           </select>
+        { noteCards }
       </div>
     ) 
   }
 }
 
+const mapStateToProps = (state) => ({
+  notes: state.notes,
+})
+
 const mapDispatchToProps = (dispatch) => ({
   changeFilter: (filter) => dispatch(changeFilter(filter)),
 })
 
-export default connect(null, mapDispatchToProps)(NoteList);
+export default connect(mapStateToProps, mapDispatchToProps)(NoteList);
