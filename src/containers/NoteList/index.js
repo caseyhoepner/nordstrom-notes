@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { NoteCard } from '../NoteCard';
+import { NoteCard } from '../../components/NoteCard';
 import { retrieveNotes } from '../../thunks/fetchNotes';
 import './NoteList.css';
 

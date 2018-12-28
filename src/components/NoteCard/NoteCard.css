@@ -13,11 +13,11 @@
 }
 
 .nc-active {
-  background-color: rgba(193, 232, 227, .4);
+  background-color: rgba(255, 223, 0, .5);
 }
 
 .nc-active:hover {
-  background-color: rgba(193, 232, 227, .6);
+  background-color: rgba(255, 223, 0, .7);
 }
 
 .nc-icon-text-container {

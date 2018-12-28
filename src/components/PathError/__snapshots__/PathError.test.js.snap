@@ -19,7 +19,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h1>
-          This page does not exist.
+          Oops! This page does not exist.
         </h1>,
         <Link
           className="pe-back-btn"
@@ -29,6 +29,7 @@ ShallowWrapper {
           ← Reroute to homepage
         </Link>,
       ],
+      "className": "pe-container",
     },
     "ref": null,
     "rendered": Array [
@@ -37,10 +38,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "This page does not exist.",
+          "children": "Oops! This page does not exist.",
         },
         "ref": null,
-        "rendered": "This page does not exist.",
+        "rendered": "Oops! This page does not exist.",
         "type": "h1",
       },
       Object {
@@ -68,7 +69,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h1>
-            This page does not exist.
+            Oops! This page does not exist.
           </h1>,
           <Link
             className="pe-back-btn"
@@ -78,6 +79,7 @@ ShallowWrapper {
             ← Reroute to homepage
           </Link>,
         ],
+        "className": "pe-container",
       },
       "ref": null,
       "rendered": Array [
@@ -86,10 +88,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "This page does not exist.",
+            "children": "Oops! This page does not exist.",
           },
           "ref": null,
-          "rendered": "This page does not exist.",
+          "rendered": "Oops! This page does not exist.",
           "type": "h1",
         },
         Object {
