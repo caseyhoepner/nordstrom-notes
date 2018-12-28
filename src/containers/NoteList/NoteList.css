@@ -34,9 +34,23 @@
   border: none;
 }
 
+.nl-filters {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
 .nl-select {
   font-size: 1rem;
-  margin: 5px 20px 40px;
   width: 175px;
   height: 30px;
+}
+
+.nl-arrows {
+  height: 20px;
+  width: 20px;
+}
+
+.nl-arrows:hover {
+  cursor: pointer;
 }
