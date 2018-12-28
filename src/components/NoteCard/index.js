@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import './NoteCard.css';
 
 export class NoteCard extends Component {
@@ -19,6 +18,7 @@ export class NoteCard extends Component {
   getTime = () => {
     const { time } = this.props;
     let timeDisplayed;
+    
     const moment = require('moment');
     const expiration = time;
     const now = moment();
@@ -27,6 +27,7 @@ export class NoteCard extends Component {
     const hours = exp.subtract(days, 'days').diff(now, 'hours');
     const minutes = exp.subtract(hours, 'hours').diff(now, 'minutes');
     const seconds = exp.subtract(minutes, 'minutes').diff(now, 'seconds');
+
     if (days) {
       if (days === -1) {
         timeDisplayed = `${days * -1} day ago`

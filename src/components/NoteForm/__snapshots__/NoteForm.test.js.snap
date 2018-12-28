@@ -18,11 +18,21 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1>
-          Notes
+        <h1
+          className="nf-title"
+        >
+          New Note
         </h1>,
-        <form>
+        <p
+          className="nf-max"
+        >
+          (max 250 characters)
+        </p>,
+        <form
+          className="nf-form"
+        >
           <textarea
+            className="nf-text-area"
             maxLength="250"
             name="text"
             onChange={[Function]}
@@ -30,6 +40,7 @@ ShallowWrapper {
             value=""
           />
           <select
+            className="nf-select"
             name="tag"
             onChange={[Function]}
             value=""
@@ -56,12 +67,14 @@ ShallowWrapper {
             </option>
           </select>
           <button
+            className="nf-save-btn"
             onClick={[Function]}
           >
             Save Note
           </button>
         </form>,
       ],
+      "className": "nf-container",
     },
     "ref": null,
     "rendered": Array [
@@ -70,11 +83,24 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Notes",
+          "children": "New Note",
+          "className": "nf-title",
         },
         "ref": null,
-        "rendered": "Notes",
+        "rendered": "New Note",
         "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "(max 250 characters)",
+          "className": "nf-max",
+        },
+        "ref": null,
+        "rendered": "(max 250 characters)",
+        "type": "p",
       },
       Object {
         "instance": null,
@@ -83,6 +109,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <textarea
+              className="nf-text-area"
               maxLength="250"
               name="text"
               onChange={[Function]}
@@ -90,6 +117,7 @@ ShallowWrapper {
               value=""
             />,
             <select
+              className="nf-select"
               name="tag"
               onChange={[Function]}
               value=""
@@ -116,11 +144,13 @@ ShallowWrapper {
               </option>
             </select>,
             <button
+              className="nf-save-btn"
               onClick={[Function]}
             >
               Save Note
             </button>,
           ],
+          "className": "nf-form",
         },
         "ref": null,
         "rendered": Array [
@@ -129,6 +159,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": "nf-text-area",
               "maxLength": "250",
               "name": "text",
               "onChange": [Function],
@@ -166,6 +197,7 @@ ShallowWrapper {
                   Hobby
                 </option>,
               ],
+              "className": "nf-select",
               "name": "tag",
               "onChange": [Function],
               "value": "",
@@ -229,6 +261,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Save Note",
+              "className": "nf-save-btn",
               "onClick": [Function],
             },
             "ref": null,
@@ -248,11 +281,21 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1>
-            Notes
+          <h1
+            className="nf-title"
+          >
+            New Note
           </h1>,
-          <form>
+          <p
+            className="nf-max"
+          >
+            (max 250 characters)
+          </p>,
+          <form
+            className="nf-form"
+          >
             <textarea
+              className="nf-text-area"
               maxLength="250"
               name="text"
               onChange={[Function]}
@@ -260,6 +303,7 @@ ShallowWrapper {
               value=""
             />
             <select
+              className="nf-select"
               name="tag"
               onChange={[Function]}
               value=""
@@ -286,12 +330,14 @@ ShallowWrapper {
               </option>
             </select>
             <button
+              className="nf-save-btn"
               onClick={[Function]}
             >
               Save Note
             </button>
           </form>,
         ],
+        "className": "nf-container",
       },
       "ref": null,
       "rendered": Array [
@@ -300,11 +346,24 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Notes",
+            "children": "New Note",
+            "className": "nf-title",
           },
           "ref": null,
-          "rendered": "Notes",
+          "rendered": "New Note",
           "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "(max 250 characters)",
+            "className": "nf-max",
+          },
+          "ref": null,
+          "rendered": "(max 250 characters)",
+          "type": "p",
         },
         Object {
           "instance": null,
@@ -313,6 +372,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <textarea
+                className="nf-text-area"
                 maxLength="250"
                 name="text"
                 onChange={[Function]}
@@ -320,6 +380,7 @@ ShallowWrapper {
                 value=""
               />,
               <select
+                className="nf-select"
                 name="tag"
                 onChange={[Function]}
                 value=""
@@ -346,11 +407,13 @@ ShallowWrapper {
                 </option>
               </select>,
               <button
+                className="nf-save-btn"
                 onClick={[Function]}
               >
                 Save Note
               </button>,
             ],
+            "className": "nf-form",
           },
           "ref": null,
           "rendered": Array [
@@ -359,6 +422,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "className": "nf-text-area",
                 "maxLength": "250",
                 "name": "text",
                 "onChange": [Function],
@@ -396,6 +460,7 @@ ShallowWrapper {
                     Hobby
                   </option>,
                 ],
+                "className": "nf-select",
                 "name": "tag",
                 "onChange": [Function],
                 "value": "",
@@ -459,6 +524,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Save Note",
+                "className": "nf-save-btn",
                 "onClick": [Function],
               },
               "ref": null,

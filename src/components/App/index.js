@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, withRouter, Switch } from 'react-router-dom';
 
-import NoteForm from '../../containers/NoteForm';
+import NoteForm from '../../components/NoteForm';
 import NoteList from '../../containers/NoteList';
 import PathError from '../PathError';
 import './App.css';
@@ -19,6 +19,5 @@ class App extends Component {
     );
   }
 };
-
 
 export default withRouter(App);
