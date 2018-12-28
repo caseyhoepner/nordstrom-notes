@@ -4,6 +4,7 @@ import { NoteCard } from '../NoteCard';
 import { retrieveNotes } from '../../thunks/fetchNotes';
 import './NoteList.css';
 
+
 export class NoteList extends Component {
   constructor(props) {
     super(props)
@@ -15,8 +16,18 @@ export class NoteList extends Component {
     }
   }
 
-  componentDidMount = () => {
-    this.props.retrieveNotes();
+
+  componentDidMount = async () => {
+    await this.props.retrieveNotes();
+    await this.setState({
+      active: this.setInitialActive()
+    })
+  }
+
+  setInitialActive = () => {
+    const sortedNotes = this.props.notes.sort((a,b) => b.time.localeCompare(a.time));
+    console.log(sortedNotes)
+    return sortedNotes[0];
   }
 
   handleChange = async (event) => {
