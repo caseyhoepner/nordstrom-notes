@@ -25,7 +25,7 @@ export class NoteForm extends Component {
   handleClick = async (event) => {
     event.preventDefault();
     await this.setState({
-      time: moment().format('MMMM Do YYYY, h:mm:ss a')
+      time: moment()
     })
     await postNote(this.state);
     this.props.history.push('/');

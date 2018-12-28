@@ -40,19 +40,20 @@ export class NoteList extends Component {
           return (
             <NoteCard 
               text={filteredNote.text} 
-              date={filteredNote.date}  
+              time={filteredNote.time}  
               tag={filteredNote.tag}  
               id={filteredNote.id}
               key={filteredNote.id} />
           )
         })
         
-    } else if (!filteredNotes.length && notes) {
+    } else if (!filteredNotes.length && !this.state.filter) {
       noteCards = notes.map(note => {
+        console.log(note)
         return(
           <NoteCard 
             text={note.text} 
-            date={note.date} 
+            time={note.time} 
             tag={note.tag} 
             id={note.id}
             key={note.id} />

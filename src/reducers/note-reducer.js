@@ -8,9 +8,7 @@ const noteReducer = (state = [], action) => {
           id: action.note.Id, 
           text: action.note.text, 
           tag: action.note.tag,
-          minutes: action.note.minutes,
-          date: action.note.date,
-          days: action.note.days 
+          time: action.note.time
         }]
       } else {
         return state;
