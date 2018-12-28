@@ -31,12 +31,14 @@ export class NoteList extends Component {
 
   render() {
     const { notes } = this.props; 
+    const sortedNotes = notes.sort((a,b) => b.time.localeCompare(a.time));
     const { filter } = this.state; 
     let filteredNotes = this.filterNotes(filter)
+    let filteredSortedNotes = filteredNotes.sort((a,b) => b.time.localeCompare(a.time));
     let noteCards;
 
-    if (filteredNotes.length) {
-        noteCards = filteredNotes.map(filteredNote => {
+    if (filteredSortedNotes.length) {
+        noteCards = filteredSortedNotes.map(filteredNote => {
           return (
             <NoteCard 
               text={filteredNote.text} 
@@ -47,9 +49,8 @@ export class NoteList extends Component {
           )
         })
         
-    } else if (!filteredNotes.length && !this.state.filter) {
-      noteCards = notes.map(note => {
-        console.log(note)
+    } else if (!filteredSortedNotes.length && !this.state.filter) {
+      noteCards = sortedNotes.map(note => {
         return(
           <NoteCard 
             text={note.text} 
