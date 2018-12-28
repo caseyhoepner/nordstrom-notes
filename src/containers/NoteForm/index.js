@@ -32,7 +32,8 @@ export class NoteForm extends Component {
     return (
       <div className='nf-container'>
         <h1 className='nf-title'>New Note</h1>
-        <form>
+        <p className='nf-max'>(max 250 characters)</p>
+        <form className='nf-form'>
           <textarea 
             className='nf-text-area'
             name='text' 

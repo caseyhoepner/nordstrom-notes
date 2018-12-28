@@ -112,7 +112,7 @@ export class NoteList extends Component {
                 name='filter' 
                 value={filter} 
                 onChange={this.handleChange}>
-                <option value=''>Choose a Filter</option>
+                <option value=''>Show all Notes</option>
                 <option value='personal'>Personal</option>
                 <option value='work'>Work</option>
                 <option value='hobby'>Hobby</option>

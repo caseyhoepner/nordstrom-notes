@@ -1,16 +1,30 @@
 .nf-container {
-  width: 60%;
+  width: 40%;
   margin: auto;
   display: flex;
   flex-direction: column;
+  background-color: rgba(128, 128, 128, .1);
+  padding: 0 40px 40px;
+  margin: 40px auto;
+  border-radius: 15px;
 }
 
 .nf-title {
-  padding: 60px 0 30px;
+  padding: 60px 0 0px;
+  margin: 0;
+}
+
+.nf-max {
+  padding: 0 0 40px;
+  margin: 0;
+}
+
+.nf-form {
+  width: 100%;
 }
 
 .nf-text-area {
-  width: 90%;
+  width: 100%;
   height: 200px;
   font-size: 1.5rem;
 }
