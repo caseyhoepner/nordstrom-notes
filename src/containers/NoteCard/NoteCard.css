@@ -1,0 +1,17 @@
+.nc-notecard {
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nc-notecard:hover {
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.nc-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 30px;
+}

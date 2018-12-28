@@ -4,8 +4,9 @@ import './NoteCard.css';
 
 export const NoteCard = ({ text, tag, date, id }) => {
   return (
-    <div>
-      <p>{text}</p>
+    <div className='nc-notecard'>
+      <p className='nc-text'>{text}</p>
+      <p>{date}</p>
     </div>
   ) 
 }

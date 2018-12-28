@@ -43,8 +43,7 @@ export class NoteList extends Component {
               date={filteredNote.date}  
               tag={filteredNote.tag}  
               id={filteredNote.id}
-              key={filteredNote.id}>
-            </NoteCard>
+              key={filteredNote.id} />
           )
         })
         
@@ -56,8 +55,7 @@ export class NoteList extends Component {
             date={note.date} 
             tag={note.tag} 
             id={note.id}
-            key={note.id}>
-          </NoteCard>
+            key={note.id} />
         )
       })
 
@@ -66,21 +64,27 @@ export class NoteList extends Component {
     }
 
     return (
-      <div>
-        <h1>Notes</h1>
-          <button onClick={() => this.props.history.push('/note-form')}>Add a Note</button>
-          <select
-              name='filter' 
-              value={filter} 
-              onChange={this.handleChange}>
-            <option value=''>Choose a Filter</option>
-            <option value='personal'>Personal</option>
-            <option value='work'>Work</option>
-            <option value='hobby'>Hobby</option>
-          </select>
-
+      <div className='nl-container'>
+        <h1 className='nl-title'>Notes</h1>
+          <div className='nl-new-note-filter'>
+            <div className='nl-add-note-btn' onClick={() => this.props.history.push('/note-form')}>
+              <img className='nl-plus' src={require('../../assets/plus.svg')} alt='Click to add a note'/>
+              <button className='nl-button'>Add a Note</button>
+            </div>
+            <select
+                className='nl-select'
+                name='filter' 
+                value={filter} 
+                onChange={this.handleChange}>
+              <option value=''>Choose a Filter</option>
+              <option value='personal'>Personal</option>
+              <option value='work'>Work</option>
+              <option value='hobby'>Hobby</option>
+            </select>
+          </div>
+        <div className='nl-note-cards-container'>
         { noteCards }
-
+        </div>
       </div>
     ) 
   }

@@ -1,0 +1,15 @@
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+select:hover {
+  cursor: pointer;
+}
