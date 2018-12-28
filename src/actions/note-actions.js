@@ -4,10 +4,3 @@ export const addNote = (note, date) => {
     note
   }
 }
-
-export const setActiveNote = (activeNote) => {
-  return {
-    type: 'SET_ACTIVE_NOTE',
-    activeNote
-  }
-}

@@ -18,15 +18,3 @@ export const noteReducer = (state = [], action) => {
       return state;
   }
 }
-
-export const setActiveNote = (state='', action) => {
-
-  switch (action.type) {
-    
-    case 'SET_ACTIVE_NOTE':
-      return action.activeNote;
-
-    default:
-      return state;
-  }
-}
