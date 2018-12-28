@@ -29,6 +29,5 @@
 }
 
 .nf-save-btn:hover {
-  background-color: gold;
-  color: #fff;
+  background-color: rgba(193, 232, 227, .6);
 }
