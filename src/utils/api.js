@@ -6,6 +6,7 @@ export const fetchNotes = async () => {
 };
 
 export const postNote = async (note) => {
+  console.log(note)
   const url = 'https://susgmazwm2.execute-api.us-east-2.amazonaws.com/testing2';
   const response = await fetch(url, {
     method: "POST",

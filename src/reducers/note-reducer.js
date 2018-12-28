@@ -1,6 +1,6 @@
 const noteReducer = (state = [], action) => {
   const stateIds = state.map(note => note.id)
-
+  // console.log(action)
   switch (action.type) {
     case 'ADD_NOTE':
       if (!stateIds.includes(action.note.Id)) {
@@ -8,7 +8,7 @@ const noteReducer = (state = [], action) => {
           id: action.note.Id, 
           text: action.note.text, 
           tag: action.note.tag,
-          date: action.date
+          time: action.note.time
         }]
       } else {
         return state;

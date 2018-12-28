@@ -3,6 +3,7 @@ import { postNote } from '../../utils/api';
 import { connect } from 'react-redux';
 import { addNote } from '../../actions/note-actions';
 import './NoteForm.css';
+var moment = require('moment');
 
 export class NoteForm extends Component {
   constructor() {
@@ -11,6 +12,7 @@ export class NoteForm extends Component {
     this.state = {
       text: '',
       tag: '',
+      time: '',
     }
   }
 
@@ -22,6 +24,9 @@ export class NoteForm extends Component {
 
   handleClick = async (event) => {
     event.preventDefault();
+    await this.setState({
+      time: moment()
+    })
     await postNote(this.state);
     this.props.history.push('/');
   }
