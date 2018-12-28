@@ -11,9 +11,15 @@
   cursor: pointer;
 }
 
+.nc-icon-text-container {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
 .nc-icon {
-  width: 10px;
   height: 10px;
+  width: 10px;
   margin-right: 10px;
 }
 
@@ -21,5 +27,5 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-right: 30px;
+  width: 85%;
 }
