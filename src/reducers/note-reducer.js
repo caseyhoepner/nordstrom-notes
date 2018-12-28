@@ -7,7 +7,8 @@ const noteReducer = (state=[], action) => {
         return [...state, {
           id: action.note.Id, 
           text: action.note.text, 
-          tag: action.note.tag
+          tag: action.note.tag,
+          date: action.date
         }]
       }
     break;

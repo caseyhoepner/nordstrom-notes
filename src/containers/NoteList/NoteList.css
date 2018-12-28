@@ -1,0 +1,45 @@
+.nl-container {
+  width: 30%;
+  background-color: #f6f6f6;
+  height: 100%;
+}
+
+.nl-title {
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.nl-plus {
+  height: 15px;
+  width: 15px;
+}
+
+.nl-new-note-filter {
+  display: flex;
+  padding: 0 20px 20px;
+}
+
+.nl-add-note-btn {
+  display: flex;
+  background-color: white;
+  margin-right: 20px;
+  border: 1px solid #a6a6a6;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.nl-add-note-btn:hover {
+  cursor: pointer;
+}
+
+.nl-button {
+  border: none;
+}
+
+.nl-select {
+  background-color: #fff;
+}
+
+.nl-select:focus {
+  outline: none;
+}

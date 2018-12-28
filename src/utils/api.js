@@ -10,7 +10,6 @@ export const postNote = async (note) => {
   const response = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" }, 
-    // accept: "application/json",
     body: JSON.stringify(note)
   });
   const status = await response.json();
