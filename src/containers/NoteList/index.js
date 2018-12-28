@@ -50,7 +50,7 @@ export class NoteList extends Component {
   render() {
     const { notes } = this.props; 
     const { filter, sorted } = this.state; 
-    const { text, time } = this.state.active; 
+    const { text } = this.state.active; 
 
     let filteredNotes = this.filterNotes(filter)
     let sortedNotes;
