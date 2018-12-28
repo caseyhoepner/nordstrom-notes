@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { postNote } from '../../utils/api';
-import { connect } from 'react-redux';
 import './NoteForm.css';
-var moment = require('moment');
 
 export class NoteForm extends Component {
   constructor() {
@@ -22,10 +20,10 @@ export class NoteForm extends Component {
   }
 
   handleClick = async (event) => {
+    const moment = require('moment');
+
     event.preventDefault();
-    await this.setState({
-      time: moment()
-    })
+    await this.setState({ time: moment() })
     await postNote(this.state);
     this.props.history.push('/');
   }
@@ -34,7 +32,8 @@ export class NoteForm extends Component {
     return (
       <div className='nf-container'>
         <h1 className='nf-title'>New Note</h1>
-        <form>
+        <p className='nf-max'>(max 250 characters)</p>
+        <form className='nf-form'>
           <textarea 
             className='nf-text-area'
             name='text' 
@@ -59,4 +58,4 @@ export class NoteForm extends Component {
   }
 }
 
-export default connect(null, null)(NoteForm);
+export default NoteForm;

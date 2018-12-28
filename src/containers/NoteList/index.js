@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { NoteCard } from '../NoteCard';
 import { retrieveNotes } from '../../thunks/fetchNotes';
 import './NoteList.css';
-
 
 export class NoteList extends Component {
   constructor(props) {
@@ -18,13 +18,12 @@ export class NoteList extends Component {
 
   componentDidMount = async () => {
     await this.props.retrieveNotes();
-    await this.setState({
-      active: this.setInitialActive()
-    })
+    await this.setState({ active: this.setInitialActive() })
   }
 
   setInitialActive = () => {
     const sortedNotes = this.props.notes.sort((a,b) => b.time.localeCompare(a.time));
+
     return sortedNotes[0];
   }
 
@@ -40,17 +39,13 @@ export class NoteList extends Component {
     return notes.filter(note => note.tag === filter);
   }
 
-  setActive= (note) => {
-    this.setState({
-      active: note
-    })
+  setActive = (note) => {
+    this.setState({ active: note })
   }
 
-
-  render() {
+  getCards = () => {
     const { notes } = this.props; 
     const { filter, sorted } = this.state; 
-    const { text, time } = this.state.active; 
 
     let filteredNotes = this.filterNotes(filter)
     let sortedNotes;
@@ -76,7 +71,6 @@ export class NoteList extends Component {
               key={filteredNote.id} 
               setActive={this.setActive}
               activeNote={this.state.active}
-
             />
           )
         })
@@ -100,6 +94,14 @@ export class NoteList extends Component {
       noteCards = <p>There are no notes to display</p>
     }
 
+    return noteCards;
+  }
+
+  render() {
+    const { filter } = this.state; 
+    const { text } = this.state.active; 
+    let noteCards = this.getCards();
+
     return (
       <div className='nl-container'>
         <div className='nl-left'>
@@ -110,7 +112,7 @@ export class NoteList extends Component {
                 name='filter' 
                 value={filter} 
                 onChange={this.handleChange}>
-                <option value=''>Choose a Filter</option>
+                <option value=''>Show all Notes</option>
                 <option value='personal'>Personal</option>
                 <option value='work'>Work</option>
                 <option value='hobby'>Hobby</option>

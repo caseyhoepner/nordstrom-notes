@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setActiveNote } from '../../actions/note-actions';
+
 import './NoteCard.css';
 
 export class NoteCard extends Component {
@@ -18,7 +17,7 @@ export class NoteCard extends Component {
   }
 
   getTime = () => {
-    const { text, tag, time, id } = this.props;
+    const { time } = this.props;
     let timeDisplayed;
     const moment = require('moment');
     const expiration = time;
@@ -60,17 +59,17 @@ export class NoteCard extends Component {
   }
 
   render() {
-    const { text, tag, time, id, activeNote } = this.props;
-    console.log(this.props)
-    console.log(this.props)
+    const { text, tag, id, activeNote } = this.props;
+
     return (
-      <div onClick={this.handleClick} className={ activeNote.id === id ? 'nc-active nc-notecard' : ' nc-notecard' }>
+      <div 
+        onClick={this.handleClick} 
+        className={ activeNote.id === id ? 'nc-active nc-notecard' : ' nc-notecard' }>
         <div className='nc-icon-text-container'>
           <img 
             className='nc-icon' 
             src={require(`../../assets/${tag}.svg`)}
-            alt={`Icon denoting that this note has a tag of ${tag}.`}
-          />
+            alt={`Icon denoting that this note has a tag of ${tag}.`}/>
           <p className='nc-text'>{text}</p>
         </div>
         <p className='nc-time'>{this.getTime()}</p>
@@ -79,4 +78,4 @@ export class NoteCard extends Component {
   }
 }
 
-export default connect(null, null)(NoteCard);
+export default NoteCard;
