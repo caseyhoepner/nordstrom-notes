@@ -5,20 +5,20 @@ Download Nordstrom Notes for a minimalist app where you can organize all the not
 [Click here to see it live!](https://nordstrom-notes.herokuapp.com/)
 
 ### Technologies Used:
-Amazon Web Services (GatewayAPI, DynamoDB, Lambda),
+
+#### Backend
+Amazon Web Services (GatewayAPI, DynamoDB, Lambda)
+
+#### FrontEnd
 React,
 Redux,
 Redux Thunks,
 React Router,
-moment.js,
+moment.js
+
+#### Testing
 Enzyme,
 Jest
-
-### How to view locally:
-
-1. clone down this repo
-2. npm install
-3. npm start
 
 ### Notes List:
 <img width="1434" alt="screen shot 2018-12-28 at 15 59 10" src="https://user-images.githubusercontent.com/36767936/50530484-b3072080-0ac3-11e9-87d0-bfdc5b1c18f4.png">
