@@ -23,22 +23,7 @@ Jest
 ### Notes List:
 <img width="1437" alt="screen shot 2018-12-28 at 15 59 10" src="https://user-images.githubusercontent.com/36767936/50530025-7507fd80-0abf-11e9-9cb9-67c9350d2368.png">
 
-### New Note:
-
-## App Architecture
-
-```
-Provider
-|
-|_ BrowserRouter
-  |
-  |_ App (stateless)
-    |
-    |_ Header (stateless)
-    |
-    |_ TravelForm (stateful)
-        |
-        |_ WeatherResults (stateless)
-```
+### New Note Form:
+<img width="826" alt="screen shot 2018-12-28 at 17 08 01" src="https://user-images.githubusercontent.com/36767936/50530450-36744200-0ac3-11e9-8c88-8ee4855277cc.png">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
