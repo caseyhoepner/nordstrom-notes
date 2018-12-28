@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import './NoteCard.css';
 
 export class NoteCard extends Component {
