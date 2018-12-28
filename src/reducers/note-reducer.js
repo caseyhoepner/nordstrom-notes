@@ -1,6 +1,6 @@
-const noteReducer = (state = [], action) => {
-  const stateIds = state.map(note => note.id)
-  // console.log(action)
+export const noteReducer = (state = [], action) => {
+  const stateIds = state.map(note => note.id);
+
   switch (action.type) {
     case 'ADD_NOTE':
       if (!stateIds.includes(action.note.Id)) {
@@ -19,4 +19,14 @@ const noteReducer = (state = [], action) => {
   }
 }
 
-export default noteReducer;
+export const setActiveNote = (state='', action) => {
+
+  switch (action.type) {
+    
+    case 'SET_ACTIVE_NOTE':
+      return action.activeNote;
+
+    default:
+      return state;
+  }
+}

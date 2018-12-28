@@ -10,7 +10,8 @@ export class NoteList extends Component {
 
     this.state = {
       filter: '',
-      sorted: true
+      sorted: true,
+      active: {}
     }
   }
 
@@ -28,7 +29,15 @@ export class NoteList extends Component {
     const { notes } = this.props;
 
     return notes.filter(note => note.tag === filter);
-  } 
+  }
+
+  setActive= (note) => {
+    console.log('fire')
+    this.setState({
+      active: note
+    })
+  }
+
 
   render() {
     const { notes } = this.props; 
@@ -44,9 +53,7 @@ export class NoteList extends Component {
     } else {
       sortedNotes = notes.sort((a,b) => a.time.localeCompare(b.time));
       filteredSortedNotes = filteredNotes.sort((a,b) => a.time.localeCompare(b.time));
-
     }
-
 
     if (filteredSortedNotes.length) {
         noteCards = filteredSortedNotes.map(filteredNote => {
@@ -56,7 +63,11 @@ export class NoteList extends Component {
               time={filteredNote.time}  
               tag={filteredNote.tag}  
               id={filteredNote.id}
-              key={filteredNote.id} />
+              key={filteredNote.id} 
+              setActive={this.setActive}
+              activeNote={this.state.active}
+
+            />
           )
         })
         
@@ -68,7 +79,11 @@ export class NoteList extends Component {
             time={note.time} 
             tag={note.tag} 
             id={note.id}
-            key={note.id} />
+            key={note.id}
+            setActive={this.setActive}
+            activeNote={this.state.active}
+
+           />
         )
       })
 
@@ -107,6 +122,7 @@ export class NoteList extends Component {
 
             <img className='nl-plus' src={require('../../assets/plus.svg')} alt='Click to add a note'/>
             <button className='nl-button'>Add a Note</button>
+            <p>{this.state.active.text}</p>
           </div>
         </div>
       </div>

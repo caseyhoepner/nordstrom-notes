@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { postNote } from '../../utils/api';
 import { connect } from 'react-redux';
-import { addNote } from '../../actions/note-actions';
 import './NoteForm.css';
 var moment = require('moment');
 
@@ -60,8 +59,4 @@ export class NoteForm extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  addNote: newNote => dispatch(addNote(newNote)),
-})
-
-export default connect(null, mapDispatchToProps)(NoteForm);
+export default connect(null, null)(NoteForm);
