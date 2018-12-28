@@ -16,7 +16,6 @@ export class NoteList extends Component {
     }
   }
 
-
   componentDidMount = async () => {
     await this.props.retrieveNotes();
     await this.setState({
@@ -26,7 +25,6 @@ export class NoteList extends Component {
 
   setInitialActive = () => {
     const sortedNotes = this.props.notes.sort((a,b) => b.time.localeCompare(a.time));
-    console.log(sortedNotes)
     return sortedNotes[0];
   }
 
@@ -43,7 +41,6 @@ export class NoteList extends Component {
   }
 
   setActive= (note) => {
-    console.log('fire')
     this.setState({
       active: note
     })
@@ -53,6 +50,8 @@ export class NoteList extends Component {
   render() {
     const { notes } = this.props; 
     const { filter, sorted } = this.state; 
+    const { text, time } = this.state.active; 
+
     let filteredNotes = this.filterNotes(filter)
     let sortedNotes;
     let filteredSortedNotes
@@ -93,7 +92,6 @@ export class NoteList extends Component {
             key={note.id}
             setActive={this.setActive}
             activeNote={this.state.active}
-
            />
         )
       })
@@ -105,36 +103,40 @@ export class NoteList extends Component {
     return (
       <div className='nl-container'>
         <div className='nl-left'>
-          <h1 className='nl-title'>Notes</h1>
+            <h1 className='nl-title'>Notes</h1>
             <div className='nl-filters'>
               <select
-                  className='nl-select'
-                  name='filter' 
-                  value={filter} 
-                  onChange={this.handleChange}>
+                className='nl-select'
+                name='filter' 
+                value={filter} 
+                onChange={this.handleChange}>
                 <option value=''>Choose a Filter</option>
                 <option value='personal'>Personal</option>
                 <option value='work'>Work</option>
                 <option value='hobby'>Hobby</option>
               </select>
-              <img 
-                onClick={ () => this.setState({ sorted: !this.state.sorted }) } 
-                className='nl-arrows' 
-                src={require('../../assets/arrows.svg')}
-                alt='Click to reorder the notes by date added.'
-                />
+            <div className='nl-title-container'>
+            <img 
+              onClick={() => this.props.history.push('/note-form')}
+              className='nl-plus nl-add-note-btn' 
+              src={require('../../assets/plus.svg')} 
+              alt='Click to add a note'
+              title='Add a note'/>
+            <img 
+              onClick={ () => this.setState({ sorted: !this.state.sorted }) } 
+              className='nl-arrows' 
+              src={require('../../assets/arrows.svg')}
+              alt='Click to reorder the notes by date added.'
+              title='Sort notes'/>
+            </div>
+
             </div>
           <div className='nl-note-cards-container'>
             { noteCards }
           </div>
         </div>
         <div className='nl-right'>
-          <div className='nl-add-note-btn' onClick={() => this.props.history.push('/note-form')}>
-
-            <img className='nl-plus' src={require('../../assets/plus.svg')} alt='Click to add a note'/>
-            <button className='nl-button'>Add a Note</button>
-            <p>{this.state.active.text}</p>
-          </div>
+          <p className='nl-text'>{text}</p>
         </div>
       </div>
     ) 

@@ -4,6 +4,7 @@
   justify-content: space-between;
   background-color: #f6f6f6;
   align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, .1);
 }
 
 .nc-notecard:hover {
@@ -12,7 +13,11 @@
 }
 
 .nc-active {
-  background-color: gold;
+  background-color: rgba(193, 232, 227, .4);
+}
+
+.nc-active:hover {
+  background-color: rgba(193, 232, 227, .6);
 }
 
 .nc-icon-text-container {
