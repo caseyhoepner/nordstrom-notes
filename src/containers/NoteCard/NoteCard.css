@@ -2,11 +2,19 @@
   padding: 5px 20px;
   display: flex;
   justify-content: space-between;
+  background-color: #f6f6f6;
+  align-items: center;
 }
 
 .nc-notecard:hover {
   background-color: #d3d3d3;
   cursor: pointer;
+}
+
+.nc-icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
 }
 
 .nc-text {

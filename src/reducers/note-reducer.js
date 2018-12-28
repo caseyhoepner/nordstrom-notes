@@ -1,4 +1,4 @@
-const noteReducer = (state=[], action) => {
+const noteReducer = (state = [], action) => {
   const stateIds = state.map(note => note.id)
 
   switch (action.type) {
@@ -10,8 +10,9 @@ const noteReducer = (state=[], action) => {
           tag: action.note.tag,
           date: action.date
         }]
+      } else {
+        return state;
       }
-    break;
 
     default:
       return state;

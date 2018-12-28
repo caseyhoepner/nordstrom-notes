@@ -65,12 +65,8 @@ export class NoteList extends Component {
 
     return (
       <div className='nl-container'>
-        <h1 className='nl-title'>Notes</h1>
-          <div className='nl-new-note-filter'>
-            <div className='nl-add-note-btn' onClick={() => this.props.history.push('/note-form')}>
-              <img className='nl-plus' src={require('../../assets/plus.svg')} alt='Click to add a note'/>
-              <button className='nl-button'>Add a Note</button>
-            </div>
+        <div className='nl-left'>
+          <h1 className='nl-title'>Notes</h1>
             <select
                 className='nl-select'
                 name='filter' 
@@ -81,9 +77,15 @@ export class NoteList extends Component {
               <option value='work'>Work</option>
               <option value='hobby'>Hobby</option>
             </select>
+          <div className='nl-note-cards-container'>
+            { noteCards }
           </div>
-        <div className='nl-note-cards-container'>
-        { noteCards }
+        </div>
+        <div className='nl-right'>
+          <div className='nl-add-note-btn' onClick={() => this.props.history.push('/note-form')}>
+            <img className='nl-plus' src={require('../../assets/plus.svg')} alt='Click to add a note'/>
+            <button className='nl-button'>Add a Note</button>
+          </div>
         </div>
       </div>
     ) 
