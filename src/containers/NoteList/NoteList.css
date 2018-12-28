@@ -1,12 +1,18 @@
 .nl-container {
-  width: 30%;
-  background-color: #f6f6f6;
   height: 100%;
+  display: flex;
+}
+
+.nl-left {
+  background-color: #f6f6f6;
+  height: 100vh;
+  width: 30%;
+  overflow: scroll;
 }
 
 .nl-title {
   margin: 0;
-  padding: 40px 20px;
+  padding: 40px 20px 15px;
 }
 
 .nl-plus {
@@ -14,18 +20,10 @@
   width: 15px;
 }
 
-.nl-new-note-filter {
-  display: flex;
-  padding: 0 20px 20px;
-}
-
 .nl-add-note-btn {
   display: flex;
-  background-color: white;
-  margin-right: 20px;
-  border: 1px solid #a6a6a6;
-  padding: 5px 8px;
-  border-radius: 5px;
+  align-items: center;
+  padding: 50px 20px;
 }
 
 .nl-add-note-btn:hover {
@@ -37,9 +35,8 @@
 }
 
 .nl-select {
-  background-color: #fff;
-}
-
-.nl-select:focus {
-  outline: none;
+  font-size: 1rem;
+  margin: 5px 20px 40px;
+  width: 175px;
+  height: 30px;
 }

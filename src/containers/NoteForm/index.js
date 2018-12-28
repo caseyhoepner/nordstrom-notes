@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { postNote } from '../../utils/api';
+import { connect } from 'react-redux';
+import { addNote } from '../../actions/note-actions';
 import './NoteForm.css';
 
 export class NoteForm extends Component {
@@ -8,7 +10,7 @@ export class NoteForm extends Component {
 
     this.state = {
       text: '',
-      tag: ''
+      tag: '',
     }
   }
 
@@ -20,22 +22,24 @@ export class NoteForm extends Component {
 
   handleClick = async (event) => {
     event.preventDefault();
-    await postNote(this.state)
-    this.props.history.push('/')
+    await postNote(this.state);
+    this.props.history.push('/');
   }
 
   render() {
     return (
-      <div>
-        <h1>Notes</h1>
+      <div className='nf-container'>
+        <h1 className='nf-title'>New Note</h1>
         <form>
           <textarea 
+            className='nf-text-area'
             name='text' 
             type='text' 
             value={this.state.text} 
             onChange={this.handleChange} 
             maxLength='250' />
           <select
+              className='nf-select'
               name='tag' 
               value={this.state.tag} 
               onChange={this.handleChange}>
@@ -44,11 +48,15 @@ export class NoteForm extends Component {
             <option value='work'>Work</option>
             <option value='hobby'>Hobby</option>
           </select>
-          <button onClick={this.handleClick}>Save Note</button>
+          <button className='nf-save-btn' onClick={this.handleClick}>Save Note</button>
         </form>
       </div>
     ) 
   }
 }
 
-export default NoteForm;
+const mapDispatchToProps = (dispatch) => ({
+  addNote: newNote => dispatch(addNote(newNote)),
+})
+
+export default connect(null, mapDispatchToProps)(NoteForm);

@@ -1,0 +1,34 @@
+.nf-container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.nf-title {
+  padding: 60px 0 30px;
+}
+
+.nf-text-area {
+  width: 90%;
+  height: 200px;
+  font-size: 1.5rem;
+}
+
+.nf-select {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  width: 200px;
+  height: 40px;
+}
+
+.nf-save-btn {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 30px;
+}
+
+.nf-save-btn:hover {
+  background-color: gold;
+  color: #fff;
+}

@@ -1,13 +1,30 @@
 * {
   font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
 }
 
 body {
   margin: 0;
 }
 
+button {
+  font-size: 1.2rem;
+  background-color: #fff;
+  border: 1px solid #a6a6a6;
+  border-radius: 5px;
+}
+
 button:hover {
   cursor: pointer;
+}
+
+select {
+  background-color: #fff;
+  padding: 5px 8px;
 }
 
 select:hover {
