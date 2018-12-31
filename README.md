@@ -33,6 +33,6 @@ Jest
 <img width="1372" alt="screen shot 2018-12-31 at 11 03 56" src="https://user-images.githubusercontent.com/36767936/50565446-2ab79400-0cec-11e9-9004-65c3726cc39a.png">
 
 ### postNote:
-<img width="1371" alt="screen shot 2018-12-31 at 11 04 31" src="https://user-images.githubusercontent.com/36767936/50565492-9b5eb080-0cec-11e9-9c2f-0a278b64d78c.png">
+<img width="1077" alt="screen shot 2018-12-31 at 11 09 31" src="https://user-images.githubusercontent.com/36767936/50565504-bb8e6f80-0cec-11e9-95bd-1a1647cbd4de.png">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
