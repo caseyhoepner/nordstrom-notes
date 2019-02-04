@@ -1,8 +1,8 @@
-# Nordstrom Notes [![Waffle.io - Columns and their card count](https://badge.waffle.io/caseyhoepner/nordstrom-notes.svg?columns=all)](https://waffle.io/caseyhoepner/nordstrom-notes)
+# Noted [![Waffle.io - Columns and their card count](https://badge.waffle.io/caseyhoepner/nordstrom-notes.svg?columns=all)](https://waffle.io/caseyhoepner/nordstrom-notes)
 
-Download Nordstrom Notes for a minimalist app where you can organize all the notes you need to keep track of from work, home, and play. With Nordstrom Notes, you can save notes, filter them by type, and re-order them by date for easy accessibility. 
+Download Noted for a minimalist app where you can organize all the notes you need to keep track of from work, home, and play. With Nordstrom Notes, you can save notes, filter them by type, and re-order them by date for easy accessibility. 
 
-[Click here to see it live!](https://nordstrom-notes.herokuapp.com/)
+**[Click here to see it live!](https://nordstrom-notes.herokuapp.com/)
 
 ## Technologies Used:
 
