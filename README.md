@@ -2,7 +2,7 @@
 
 Download Noted for a minimalist app where you can organize all the notes you need to keep track of from work, home, and play. With Nordstrom Notes, you can save notes, filter them by type, and re-order them by date for easy accessibility. 
 
-**[Click here to see it live!](https://nordstrom-notes.herokuapp.com/)
+[Click here to see it live!](https://nordstrom-notes.herokuapp.com/)
 
 ## Technologies Used:
 
